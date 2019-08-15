@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-appupdate-plugin"
+	version="1.0.1"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0">
+	<name>appUpdatePlugin</name>
+	<js-module name="appUpdatePlugin" src="www/appUpdatePlugin.js">
+		<clobbers target="cordova.plugins.appUpdatePlugin" />
+	</js-module>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="appUpdatePlugin">
+				<param name="ios-package" value="appUpdatePlugin" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/appUpdatePlugin.m" />
+		<header-file src="src/ios/UIViewController+Update.h" />
+		<source-file src="src/ios/UIViewController+Update.m" />
+	</platform>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="appUpdatePlugin">
+				<param name="android-package" value="cordova-appupdate-plugin.appUpdatePlugin" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /></config-file>
+		<source-file src="src/android/appUpdatePlugin.java"
+			target-dir="src/cordova-appupdate-plugin/appUpdatePlugin" />
+	</platform>
+</plugin>
