@@ -1,0 +1,2 @@
+# appUpdatePlugin
+update for cordova
