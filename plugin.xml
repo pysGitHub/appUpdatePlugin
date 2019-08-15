@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-appupdate-plugin"
-	version="1.0.1"
+	version="1.0.2"
 	xmlns="http://apache.org/cordova/ns/plugins/1.0">
 	<name>appUpdatePlugin</name>
 	<js-module name="appUpdatePlugin" src="www/appUpdatePlugin.js">
